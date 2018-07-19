@@ -1,0 +1,69 @@
+.navbar {
+  padding: 10px 0;
+  background-color: rgba(63, 191, 191, 0.95);
+}
+
+.navbar-toggle {
+  color: #fff;
+}
+
+.navbar-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 210px;
+  margin: 0;
+  padding: 0;
+  z-index: 9998;
+  transition: all 500ms linear;
+  background-color: rgba(63, 191, 191, 0.95);
+
+  list-style: none;
+}
+
+.navbar-usuario {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(39, 122, 97, 0.95);
+  border-bottom: 1px solid #525151;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(209, 255, 241);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.navbar-menuitem {
+  padding: 15px;
+}
+
+.navbar-menuitem a {
+  color: rgb(209, 255, 241);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-menuitem.ativo {
+  background-color: rgba(230, 230, 230, 0.3);
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  border-radius: 10px; 
+}
+
+.navbar-menuitem:hover {
+  background-color: rgba(230, 230, 230, 0.2);
+  
+}
+
+.navbar-menuitem a:hover {
+  color: #fff;
+}
+
+.navbar-menuitem.ativo:hover {
+  background-color:rgba(230, 230, 230, 0.2);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5); 
+}
+
+
+/* box-shadow: 5px 5px 5px rgba(0,0,0,0.5); */
