@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumoDiarioService, Filtro } from '../resumo-diario.service';
 import { Title } from '@angular/platform-browser';
+import { Lancamento } from '../model';
 
 @Component({
   selector: 'app-resumo-diario-pesquisa',
@@ -13,9 +14,11 @@ export class ResumoDiarioPesquisaComponent implements OnInit {
 
   lancamentos = [];
 
+  lancamento: Lancamento;
+
   pt: any;
 
-  loader = false;
+  loader = false; 
 
   constructor(
     private resumoService: ResumoDiarioService,
@@ -40,9 +43,9 @@ export class ResumoDiarioPesquisaComponent implements OnInit {
     this.resumoService.listar()
       .then(resultado => {
         setTimeout(() => {
-          this.lancamentos = resultado;
           this.loader = false;
-        }, 1000);
+        }, 100);
+        this.lancamentos = resultado;
       })
       .catch(erro => {
         console.log(erro);
@@ -52,14 +55,15 @@ export class ResumoDiarioPesquisaComponent implements OnInit {
   public pesquisar() {
     this.loader = true;
 
+    this.lancamentos = [];
+
     this.resumoService.pesquisar(this.filtro)
-      .then(resultado => {
+      .then(lancamentos => {
         setTimeout(() => {
-          this.lancamentos = resultado;
-          console.log(this.lancamentos);
-          
           this.loader = false;
-        }, 1000);
+        }, 100);
+        
+        this.lancamentos = lancamentos;
         
       })
     
@@ -77,6 +81,8 @@ export class ResumoDiarioPesquisaComponent implements OnInit {
       clear: 'Limpar'
     };
   }
+
+  
   public limpar() {
     this.filtro = new Filtro();
     this.listar();

@@ -12,7 +12,8 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PanelModule } from 'primeng/panel';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-
+import { ToolbarModule } from 'primeng/toolbar';
+import { CardModule } from 'primeng/card';
 
 import { SharedModule } from '../shared/shared.module';
 import { ResumoDiarioRoutingModule } from './resumo-routing.module';
@@ -20,6 +21,7 @@ import { ResumoDiarioCadastroComponent } from './resumo-diario-cadastro/resumo-d
 import { ResumoDiarioPesquisaComponent } from './resumo-diario-pesquisa/resumo-diario-pesquisa.component';
 import { ResumoDiarioService } from './resumo-diario.service';
 import { CoreModule } from '../core/core.module';
+import { ResumoDiarioComponent } from './resumo-diario/resumo-diario.component';
 
 @NgModule({
   imports: [
@@ -37,6 +39,8 @@ import { CoreModule } from '../core/core.module';
     DropdownModule,
     PanelModule,
     ProgressSpinnerModule,
+    ToolbarModule,
+    CardModule,
 
     SharedModule,
     CoreModule,
@@ -44,7 +48,7 @@ import { CoreModule } from '../core/core.module';
   ],
   declarations: [
     ResumoDiarioCadastroComponent, 
-    ResumoDiarioPesquisaComponent
+    ResumoDiarioPesquisaComponent, ResumoDiarioComponent
   ],
   exports:[],
   providers: [ResumoDiarioService]

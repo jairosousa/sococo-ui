@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 
 import * as moment from 'moment';
 import { Observable } from 'rxjs';
+import { Lancamento } from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class ResumoDiarioService {
       })
   }
 
-  public pesquisar(filtro: Filtro): Promise<any> {
+  public pesquisar(filtro: Filtro): Promise<Lancamento[]> {
 
     const params = new URLSearchParams();
 
@@ -46,7 +47,7 @@ export class ResumoDiarioService {
       { search: params })
       .toPromise()
       .then(response => {
-        const lancamentos = response.json();
+        const lancamentos = response.json() as Lancamento[];
         return lancamentos;
       });
 

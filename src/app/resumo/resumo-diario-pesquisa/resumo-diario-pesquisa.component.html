@@ -23,8 +23,6 @@
   </form>
 </div>
 
-
-
 <div class="ui-g">
   <div class="ui-g-12">
     <p-table [value]="lancamentos" [paginator]="true" [rows]="10" responsive="true">
@@ -35,18 +33,18 @@
 
       <ng-template pTemplate="header">
         <tr>
-          <th>Data</th>
-          <th>Coco Processados</th>
-          <th>Coco Desfibrados</th>
-          <th>CRI</th>
+          <th class="col-data">Data</th>
+          <th class="col-data">Coco Processados</th>
+          <th class="col-data">Coco Desfibrados</th>
+          <th class="cri">CRI</th>
           <th>Flococo</th>
           <th>Óleo Ind. A</th>
           <th>Óleo Ind. ETE</th>
-          <th>Torta</th>
+          <th class="torta">Torta</th>
           <th>Água Coco</th>
           <th>Água Coco Verde</th>
-          <th>% Coco Germinado.</th>
-          <th>Total Caçambas</th>
+          <th class="col-data">% Coco Germinado.</th>
+          <th class="col-data">Total Caçambas</th>
           <th>Caixa Padrão</th>
           <th>N°. Fardos</th>
         </tr>
