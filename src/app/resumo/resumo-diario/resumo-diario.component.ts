@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ResumoDiarioService, Filtro } from '../resumo-diario.service';
-import { Sococo, Acqua, Amafibra } from '../model';
+import { Sococo, Acqua, Amafibra, Lancamento } from '../model';
 import { THROW_IF_NOT_FOUND } from '../../../../node_modules/@angular/core/src/di/injector';
 import { lang } from '../../../../node_modules/moment';
 
@@ -42,9 +42,14 @@ export class ResumoDiarioComponent implements OnInit {
   public pesquisar() {
     this.loader = true;
 
+    this.lancamentos = [];
+
+    this.limparListas();
+
     this.resumoService.pesquisar(this.filtro)
       .then(lancamentos => {
 
+        
         console.log(lancamentos);
         
 
@@ -71,13 +76,16 @@ export class ResumoDiarioComponent implements OnInit {
             lancamento.numeroDeFardos
           )
 
-
+          let tipo  =  typeof(lancamento.procentagemCocoGerminado);
+          console.log(tipo);
+          
         })
 
         this.lancamentos.push(this.sococo);
         this.lancamentos.push(this.acqua);
         this.lancamentos.push(this.amafibra);
         console.log(this.lancamentos);
+
         
         setTimeout(() => {
           this.loader = false;
@@ -104,6 +112,12 @@ export class ResumoDiarioComponent implements OnInit {
   public limpar() {
     this.filtro = new Filtro();
     this.carregarData();
+  }
+
+  public limparListas() {
+    this.sococo = new Sococo();
+    this.acqua = new Acqua();
+    this.amafibra = new Amafibra();
   }
 
 

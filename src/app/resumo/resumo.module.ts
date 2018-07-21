@@ -41,6 +41,7 @@ import { ResumoDiarioComponent } from './resumo-diario/resumo-diario.component';
     ProgressSpinnerModule,
     ToolbarModule,
     CardModule,
+    TooltipModule,
 
     SharedModule,
     CoreModule,

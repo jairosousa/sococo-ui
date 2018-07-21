@@ -12,17 +12,18 @@
     <li class="navbar-usuario">SOCOCO</li>
     
     <li class="navbar-menuitem" [routerLink]="['/']">
-      <a>Dashboad</a>
+      <button pButton type="button" label="Dashboad" tyleClass="menu-lac"></button>
     </li>
 
-    <li class="navbar-menuitem" routerLinkActive="ativo" routerLink="/resumo">
-      <a>Lançamentos Diários</a>
+    <li class="navbar-menuitem" routerLinkActive="ativo" >
+      <p-splitButton label="Lançamentos" [model]="items" styleClass="menu-lac"></p-splitButton>
+
     </li>
-    <li class="navbar-menuitem" routerLinkActive="ativo" routerLink="/cadastro">
-      <a>Cadastro Diario</a>
+    <li class="navbar-menuitem">
+      <p-splitButton label="Cadastro" [model]="items_cad" styleClass="menu-lac"></p-splitButton>
     </li>
-    <li class="navbar-menuitem" routerLinkActive="ativo" routerLink="/pesquisa">
-      <a>Lista Diária</a>
+    <li class="navbar-menuitem" routerLink="/pesquisa">
+      <button pButton type="button" label="Lista Diária" tyleClass="menu-lac"></button>
     </li>
     
     <li class="navbar-menuitem"><a href="javascript:;" (click)="logout()">Logout</a></li>

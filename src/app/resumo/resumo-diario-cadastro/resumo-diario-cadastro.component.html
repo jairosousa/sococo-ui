@@ -2,202 +2,203 @@
   <p-progressSpinner [style]="{width: '100px', height: '100px'}" strokeWidth="8" fill="#EEEEEE" animationDuration="1.5s"></p-progressSpinner>
 </div>
 
-<div class="ui-g">
-  <div class="ui-g-12">
-    <h1>Cadastro Diário</h1>
-  </div>
-</div>
-
 <p-growl [value]="msgs"></p-growl>
 
-<div class="ui-g-12 ui-md-6 ui-sm-12">
-  <h3>Data: {{ date | date:'dd/MM/yyyy' }} </h3>
-  <!-- <p-calendar formControlName="dataLancamento" [(ngModel)]="date" [locale]="pt"></p-calendar> {{date1|date}}
-         -->
-</div>
-<div class="ui-grid-row">
+<p-toolbar>
+  <div class="ui-toolbar-group-left">
+    <h3>Cadastro Diario</h3>
+  </div>
 
-</div>
+  <div class="ui-toolbar-group-center">
+   
+  </div>
+
+  <div class="ui-toolbar-group-right">
+    <h3>Data: {{ date | date:'dd/MM/yyyy' }} </h3>
+  </div>
+</p-toolbar>
+
 
 <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario.value)" novalidate>
   <div class="ui-g-12">
-    <p-panel header="Produção Diária Sococo" class="painel">
-
-      <div class="ui-g">
-        <div class="ui-g-6 ui-md-6 ui-sm-12 ui-fluid">
-          <label>Cocos Desfribrados (und)</label>
-          <input type="number" pInputText formControlName="cocosDesfibrados" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['cocosDesfibrados'].valid&&(formulario.controls['cocosDesfibrados'].dirty||formulario.controls['cocosDesfibrados'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+    <div class="ui-g-12">
+      <p-panel header="Produção Diária Sococo" styleClass="panel-soc">
+  
+        <div class="ui-g">
+          <div class="ui-g-6 ui-md-6 ui-sm-12 ui-fluid">
+            <label>Cocos Desfribrados (und)</label>
+            <input type="number" pInputText formControlName="cocosDesfibrados" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['cocosDesfibrados'].valid&&(formulario.controls['cocosDesfibrados'].dirty||formulario.controls['cocosDesfibrados'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-md-6 ui-sm-12 ui-fluid">
-          <label>Cocos Processados (und)</label>
-          <input type="number" pInputText formControlName="cocosProcessados" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['cocosProcessados'].valid&&(formulario.controls['cocosProcessados'].dirty||formulario.controls['cocosProcessados'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-md-6 ui-sm-12 ui-fluid">
+            <label>Cocos Processados (und)</label>
+            <input type="number" pInputText formControlName="cocosProcessados" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['cocosProcessados'].valid&&(formulario.controls['cocosProcessados'].dirty||formulario.controls['cocosProcessados'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>CRI (Kg)</label>
-          <input type="number" pInputText formControlName="cri" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['cri'].valid&&(formulario.controls['cri'].dirty||formulario.controls['cri'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>CRI (Kg)</label>
+            <input type="number" pInputText formControlName="cri" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['cri'].valid&&(formulario.controls['cri'].dirty||formulario.controls['cri'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Flococo (Kg)</label>
-          <input type="number" pInputText formControlName="flococo" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['flococo'].valid&&
-                                      (formulario.controls['flococo'].dirty||formulario.controls['flococo'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Flococo (Kg)</label>
+            <input type="number" pInputText formControlName="flococo" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['flococo'].valid&&
+                                        (formulario.controls['flococo'].dirty||formulario.controls['flococo'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Óleo Industrial ETE (L)</label>
-          <input type="number" pInputText formControlName="oleoIndustrialETE" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['oleoIndustrialETE'].valid&&
-                                                  (formulario.controls['oleoIndustrialETE'].dirty||formulario.controls['oleoIndustrialETE'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Óleo Industrial ETE (L)</label>
+            <input type="number" pInputText formControlName="oleoIndustrialETE" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['oleoIndustrialETE'].valid&&
+                                                    (formulario.controls['oleoIndustrialETE'].dirty||formulario.controls['oleoIndustrialETE'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Óleo Industrial Tipo A (L)</label>
-          <input type="number" pInputText formControlName="oleoIndustrialTipoA" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['oleoIndustrialTipoA'].valid&&
-                                                              (formulario.controls['oleoIndustrialTipoA'].dirty||formulario.controls['oleoIndustrialTipoA'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Óleo Industrial Tipo A (L)</label>
+            <input type="number" pInputText formControlName="oleoIndustrialTipoA" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['oleoIndustrialTipoA'].valid&&
+                                                                (formulario.controls['oleoIndustrialTipoA'].dirty||formulario.controls['oleoIndustrialTipoA'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Torta - ração (Kg)</label>
-          <input type="number" pInputText formControlName="torta" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['torta'].valid&&
-                                                                          (formulario.controls['torta'].dirty||formulario.controls['torta'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Torta - ração (Kg)</label>
+            <input type="number" pInputText formControlName="torta" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['torta'].valid&&
+                                                                            (formulario.controls['torta'].dirty||formulario.controls['torta'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
+  
         </div>
+      </p-panel>
 
-      </div>
-    </p-panel>
-
-    <br />
-
-    <p-panel header="Produção Diária Acqua" class="painel">
-      <div class="ui-g">
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Água de Coco Sococo</label>
-          <input type="number" pInputText formControlName="aguaDeCocoSococo" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['aguaDeCocoSococo'].valid&&
-                                                      (formulario.controls['aguaDeCocoSococo'].dirty||formulario.controls['aguaDeCocoSococo'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+    </div>
+    <div class="ui-g-12">
+      <p-panel header="Produção Diária Acqua" styleClass="panel-acq">
+        <div class="ui-g">
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Água de Coco Sococo</label>
+            <input type="number" pInputText formControlName="aguaDeCocoSococo" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['aguaDeCocoSococo'].valid&&
+                                                        (formulario.controls['aguaDeCocoSococo'].dirty||formulario.controls['aguaDeCocoSococo'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Água de Coco Verde</label>
-          <input type="number" pInputText formControlName="aguaDeCocoVerde" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['aguaDeCocoVerde'].valid&&
-                                                                (formulario.controls['aguaDeCocoVerde'].dirty||formulario.controls['aguaDeCocoVerde'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Água de Coco Verde</label>
+            <input type="number" pInputText formControlName="aguaDeCocoVerde" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['aguaDeCocoVerde'].valid&&
+                                                                  (formulario.controls['aguaDeCocoVerde'].dirty||formulario.controls['aguaDeCocoVerde'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Porcentagem de Cocô Germinado</label>
-          <input type="number" pInputText formControlName="numeroDeFardos" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['numeroDeFardos'].valid&&
-                                                                          (formulario.controls['numeroDeFardos'].dirty||formulario.controls['numeroDeFardos'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Porcentagem de Cocô Germinado</label>
+            <input type="number" pInputText formControlName="numeroDeFardos" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['numeroDeFardos'].valid&&
+                                                                            (formulario.controls['numeroDeFardos'].dirty||formulario.controls['numeroDeFardos'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Total de Cacambas</label>
-          <input type="number" pInputText formControlName="porcentagemCocoGerminado" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['porcentagemCocoGerminado'].valid&&
-                                            (formulario.controls['porcentagemCocoGerminado'].dirty||formulario.controls['porcentagemCocoGerminado'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Total de Cacambas</label>
+            <input type="number" pInputText formControlName="porcentagemCocoGerminado" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['porcentagemCocoGerminado'].valid&&
+                                              (formulario.controls['porcentagemCocoGerminado'].dirty||formulario.controls['porcentagemCocoGerminado'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Caixa Padrão</label>
-          <input type="number" pInputText formControlName="caixaPadrao" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['caixaPadrao'].valid&&
-                                              (formulario.controls['caixaPadrao'].dirty||formulario.controls['caixaPadrao'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Caixa Padrão</label>
+            <input type="number" pInputText formControlName="caixaPadrao" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['caixaPadrao'].valid&&
+                                                (formulario.controls['caixaPadrao'].dirty||formulario.controls['caixaPadrao'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
+  
         </div>
+      </p-panel>
 
-      </div>
-    </p-panel>
-
-    <br />
-
-    <p-panel header="Produção Diária Amafibra" class="painel">
-      <div class="ui-g">
-
-        <div class="ui-g-6 ui-sm-12 ui-fluid">
-          <label>Número de Fardos</label>
-          <input type="number" pInputText formControlName="totalDeCacambas" />
-          <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
-            <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['totalDeCacambas'].valid&&
-                                    (formulario.controls['totalDeCacambas'].dirty||formulario.controls['totalDeCacambas'].touched)">
-              <i class="pi pi-info-circle"></i>
-              O valor é obrigatório
+    </div>
+    <div class="ui-g-12">
+      <p-panel header="Produção Diária Amafibra"styleClass="panel-ama">
+        <div class="ui-g">
+  
+          <div class="ui-g-6 ui-sm-12 ui-fluid">
+            <label>Número de Fardos</label>
+            <input type="number" pInputText formControlName="totalDeCacambas" />
+            <div class="ui-grid-col-6" style="font-size: 18px; margin-top: 5px">
+              <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!formulario.controls['totalDeCacambas'].valid&&
+                                      (formulario.controls['totalDeCacambas'].dirty||formulario.controls['totalDeCacambas'].touched)">
+                <i class="pi pi-info-circle"></i>
+                O valor é obrigatório
+              </div>
             </div>
           </div>
+  
         </div>
+      </p-panel>
 
-      </div>
-    </p-panel>
+    </div>
 
-    <br />
-
-    <div class="ui-g-4 ui-sm-12">
+    <div class="ui-g-12 ui-sm-12" style="margin-top: 10px">
       <button pButton icon="pi pi-times-circle" class="ui-button-warning" label="Cancelar" [disabled]="false" style="margin-right: 10px;"></button>
       <button pButton icon="pi pi-check-circle" label="Salvar" [disabled]="formulario.invalid"></button>
     </div>

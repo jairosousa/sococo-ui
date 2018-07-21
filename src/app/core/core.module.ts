@@ -8,6 +8,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { GrowlModule } from 'primeng/growl';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {ButtonModule} from 'primeng/button';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { NaoAutorizadoComponent } from './nao-autorizado.component';
@@ -22,6 +24,8 @@ import { ErrorHandlerService } from './error-handler.service';
 
     GrowlModule,
     ConfirmDialogModule,
+    SplitButtonModule,
+    ButtonModule
   ],
   declarations: [
     NavbarComponent,

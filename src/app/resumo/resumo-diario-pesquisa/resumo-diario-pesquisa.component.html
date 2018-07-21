@@ -3,29 +3,30 @@
 </div>
 
 
-<div class="ui-g">
-  <div class="ui-g-12">
-    <h1>Lançamentos</h1>
+<p-toolbar>
+  <div class="ui-toolbar-group-left">
+    <h2>Lancamentos</h2>
   </div>
 
-  <form autocomplete="off" (ngSubmit)="pesquisar()">
-  
-    <div class="ui-g-12">
-      <label style="display: block">Data</label>
-      <p-calendar [locale]="pt" dateFormat="dd/mm/yy" [inputStyle]="{ width: '200px' }" name="dataLancamento" [(ngModel)]="filtro.dataLancamento"></p-calendar>
-  
-    </div>
-  
-    <div class="ui-g-12 ui-lg-12">
-      <button pButton type="button" label="limpar" icon="pi pi-refresh" (click)="limpar()" class="ui-button-secondary"></button>
-      <button pButton type="submit" label="Pesquisar" icon="pi pi-search"></button>
-    </div>
-  </form>
-</div>
+  <div class="ui-toolbar-group-right">
+    <h4>
+      <p-calendar [touchUI]="true" [showIcon]="true" [locale]="pt" dateFormat="dd/mm/yy" [inputStyle]="{ width: '200px'}" name="dataLancamento"
+        [(ngModel)]="filtro.dataLancamento" (onSelect)="pesquisar()">
+      </p-calendar>
+      <span style="margin-left:35px" pTooltip="Pesquisar"></span>
+
+      <button pButton type="button" icon="pi pi-refresh" (click)="limpar()" styleClass="my-calendar" class="ui-button-secondary"
+        pTooltip="Limpar" tooltipPosition="top">
+      </button>
+
+    </h4>
+  </div>
+</p-toolbar>
 
 <div class="ui-g">
   <div class="ui-g-12">
-    <p-table [value]="lancamentos" [paginator]="true" [rows]="10" responsive="true">
+    <p-table [value]="lancamentos" [paginator]="true" [rows]="10" responsive="true"
+    styleClass="tabela">
 
       <ng-template pTemplate="caption">
         Listagem de Lançamentos Diários
@@ -36,17 +37,17 @@
           <th class="col-data">Data</th>
           <th class="col-data">Coco Processados</th>
           <th class="col-data">Coco Desfibrados</th>
-          <th class="cri">CRI</th>
-          <th>Flococo</th>
-          <th>Óleo Ind. A</th>
-          <th>Óleo Ind. ETE</th>
-          <th class="torta">Torta</th>
-          <th>Água Coco</th>
-          <th>Água Coco Verde</th>
+          <th class="col-data cri">CRI</th>
+          <th class="col-data caixa">Flococo</th>
+          <th class="col-data oleo">Óleo Ind. A</th>
+          <th class="col-data oleo">Óleo Ind. ETE</th>
+          <th class="col-data torta">Torta</th>
+          <th class="col-data">Água Coco</th>
+          <th class="col-data">Água Coco Verde</th>
           <th class="col-data">% Coco Germinado.</th>
           <th class="col-data">Total Caçambas</th>
-          <th>Caixa Padrão</th>
-          <th>N°. Fardos</th>
+          <th class="col-data caixa">Caixa Padrão</th>
+          <th class="col-data caixa">N°. Fardos</th>
         </tr>
       </ng-template>
 

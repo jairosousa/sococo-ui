@@ -49,6 +49,11 @@ label {
   text-align: center;
 }
 
+th.col-data {
+  background: linear-gradient(to bottom, rgba(29, 134, 134, 0.95), rgba(63, 185, 185, 0.95) 100%);
+  color: #fff !important;
+}
+
 .col-data-header {
   width: 120px;
 }
@@ -69,7 +74,65 @@ label {
 	z-index: 1000;
 }
 
-.ui-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
+/*Estilos Panel Cadastro Diário*/
+.panel-btn , .panel-soc, .panel-acq , .panel-ama{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-transform: uppercase;
 }
+
+.panel-soc, .panel-acq, .panel-ama, .ui-panel-titlebar{
+  font-size: 1.20rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.panel-soc, .panel-acq, .panel-ama, .ui-panel-content{
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/*Estilos Panel Lançamento Diário*/
+
+.panel-soc .ui-panel-titlebar {
+  background: rgba(240, 17, 36, 0.95); 
+}
+
+.panel-acq .ui-panel-titlebar {
+  background: rgba(152, 209, 140, 0.95); 
+}
+
+.panel-ama .ui-panel-titlebar {
+    background: rgba(240, 166, 30, 0.95);
+}
+
+.ui-toolbar {
+ background: linear-gradient(to bottom, rgba(29, 134, 134, 0.95), rgba(63, 185, 185, 0.95) 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+.tabela .ui-widget-header {
+  background: linear-gradient(to bottom, rgba(29, 134, 134, 0.95), rgba(63, 185, 185, 0.95) 100%);
+  color: #fff;
+}
+
+.menu-lac .ui-splitbutton {
+   background: rgba(230, 230, 230, 0.3) !important;
+}
+
+.menu-lac .ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button {
+    border: 1px solid rgba(63, 191, 191, 0.95);
+    color: #FFFFFF;
+    background:rgba(63, 191, 191, 0.95);
+    transition: background-color .2s;
+    padding: 0;
+}
+
+
+
+/*
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */

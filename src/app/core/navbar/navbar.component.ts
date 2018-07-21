@@ -10,6 +10,15 @@ export class NavbarComponent implements OnInit {
 
   exibindoMenu = false;
 
+  items = [
+            {label: 'Diario', icon: 'fa-link', routerLink: ['/resumo']},
+            {label: 'mensal', icon: 'fa-paint-brush', routerLink: ['/cadastro'], routerLinkActive:"ativo"}
+        ];
+
+  items_cad = [
+    { label: 'Diario', icon: 'fa-link', routerLink: ['/cadastro']},
+        ];
+
   constructor(
     private router: Router
   ) { }

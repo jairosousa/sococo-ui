@@ -5,11 +5,15 @@
 
     <div class="ui-toolbar-group-right">
         <h4>
-            <form autocomplete="off" (ngSubmit)="pesquisar()">
-                <p-calendar [locale]="pt" dateFormat="dd/mm/yy" [inputStyle]="{ width: '200px' }" name="dataLancamento" [(ngModel)]="filtro.dataLancamento"></p-calendar>
-                <button pButton type="submit" icon="pi pi-search"></button>
-                <button pButton type="button" icon="pi pi-refresh" (click)="limpar()" class="ui-button-secondary"></button>
-            </form>
+            <p-calendar [touchUI]="true" [showIcon]="true" [locale]="pt" dateFormat="dd/mm/yy" [inputStyle]="{ width: '200px'}" name="dataLancamento"
+                [(ngModel)]="filtro.dataLancamento" (onSelect)="pesquisar()">
+            </p-calendar>
+            <span style="margin-left:35px" pTooltip="Pesquisar"></span>
+
+            <button pButton type="button" icon="pi pi-refresh" (click)="limpar()" styleClass="my-calendar"
+            class="ui-button-secondary" pTooltip="Limpar" tooltipPosition="top">
+            </button>
+
         </h4>
     </div>
 </p-toolbar>
@@ -18,10 +22,13 @@
 
 <div class="ui-g">
     <div class="ui-g-12 ui-md-4 ui-lg-4" *ngIf="sococo">
-        <p-card title="Produção Sococo">
+        <p-panel styleClass="panel-soc">
+            <p-header>
+                Produção Sococo
+            </p-header>
             <div class="ui-g">
                 <div class="ui-g-12 ui-g-nopad">
-                    <div class="ui-g-8">
+                    <div class="ui-g-10">
                         <tr>
                             <th>Cocos Desfibrados</th>
                         </tr>
@@ -45,35 +52,38 @@
                         </tr>
 
                     </div>
-                    <div class="ui-g-4">
+                    <div class="ui-g-2">
                         <tr>
-                            <th>{{sococo.coco_desfibrado}}</th>
+                            <th>{{sococo.coco_desfibrado ? sococo.coco_desfibrado : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{sococo.coco_processado}}</th>
+                            <th>{{sococo.coco_processado ? sococo.coco_processado : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{sococo.cri}}</th>
+                            <th>{{sococo.cri ? sococo.cri : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{sococo.flococo}}</th>
+                            <th>{{sococo.flococo ? sococo.flococo : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{sococo.oleo_ind_a}}</th>
+                            <th>{{sococo.oleo_ind_a ? sococo.oleo_ind_a : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{sococo.oleo_ind_ete}}</th>
+                            <th>{{sococo.oleo_ind_ete ? sococo.oleo_ind_ete : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{sococo.torta}}</th>
+                            <th>{{sococo.torta ? sococo.torta : "0"}}</th>
                         </tr>
                     </div>
                 </div>
             </div>
-        </p-card>
+        </p-panel>
     </div>
     <div class="ui-g-12 ui-md-4 ui-lg-4" *ngIf="acqua">
-        <p-card title="Produção Acqua">
+        <p-panel styleClass="panel-acq">
+            <p-header>
+                Produção Acqua
+            </p-header>
             <div class="ui-g">
                 <div class="ui-g-12 ui-g-nopad">
                     <div class="ui-g-10">
@@ -95,78 +105,44 @@
                     </div>
                     <div class="ui-g-2">
                         <tr>
-                            <th>{{acqua.agua_coco_sococo}}</th>
+                            <th>{{acqua.agua_coco_sococo ? acqua.agua_coco_sococo : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{acqua.agua_coco_verde}}</th>
+                            <th>{{acqua.agua_coco_verde ? acqua.agua_coco_verde : "0"}}</th>
                         </tr>
                         <tr>
                             <th>{{acqua.porcentagem_coco_germinado ? acqua.porcentagem_coco_germinado : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{acqua.total_cacambas}}</th>
+                            <th>{{acqua.total_cacambas ? acqua.total_cacambas : "0"}}</th>
                         </tr>
                         <tr>
-                            <th>{{acqua.caixa_padrao}}</th>
+                            <th>{{acqua.caixa_padrao ? acqua.caixa_padrao : "0"}}</th>
                         </tr>
                     </div>
                 </div>
             </div>
-        </p-card>
+        </p-panel>
     </div>
-    <div class="ui-g-12 ui-md-4 ui-lg-4" *ngIf="Amafibra">
-        <p-card title="Produção Sococo" class="card">
+    <div class="ui-g-12 ui-md-4 ui-lg-4" *ngIf="amafibra">
+        <p-panel styleClass="panel-ama">
+            <p-header>
+                Produção Amafibra
+            </p-header>
             <div class="ui-g">
                 <div class="ui-g-12 ui-g-nopad">
-                    <div class="ui-g-8">
+                    <div class="ui-g-10">
                         <tr>
-                            <th>Cocos Desfibrados</th>
+                            <th>Nº de fardos</th>
                         </tr>
-                        <tr>
-                            <th>Cocos Processados</th>
-                        </tr>
-                        <tr>
-                            <th>Cri</th>
-                        </tr>
-                        <tr>
-                            <th>Flococo</th>
-                        </tr>
-                        <tr>
-                            <th>Óleo Ind. Tipo A</th>
-                        </tr>
-                        <tr>
-                            <th>Óleo Ind. ETE</th>
-                        </tr>
-                        <tr>
-                            <th>Torta</th>
-                        </tr>
-    
                     </div>
-                    <div class="ui-g-4">
+                    <div class="ui-g-2">
                         <tr>
-                            <th>{{sococo.coco_desfibrado}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{sococo.coco_processado}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{sococo.cri}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{sococo.flococo}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{sococo.oleo_ind_a}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{sococo.oleo_ind_ete}}</th>
-                        </tr>
-                        <tr>
-                            <th>{{sococo.torta}}</th>
+                            <th>{{amafibra.numero_fardos ? amafibra.numero_fardos : "0"}}</th>
                         </tr>
                     </div>
                 </div>
             </div>
-        </p-card>
+        </p-panel>
     </div>
 </div>
