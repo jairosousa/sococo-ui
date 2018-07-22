@@ -47,6 +47,31 @@ export class ResumoDiarioService {
       { search: params })
       .toPromise()
       .then(response => {
+
+        console.log(response.json());
+        
+
+        const lancamentos = response.json() as Lancamento[];
+        return lancamentos;
+      });
+
+  }
+
+  public pesquisarMes(filtro: Filtro): Promise<Lancamento[]> {
+
+    const params = new URLSearchParams();
+
+    if (filtro.dataLancamento) {
+      params.set('dataLancamento',
+        moment(filtro.dataLancamento).format('YYYY-MM-DD'));
+    }
+
+    console.log(params);
+
+    return this.http.get(`${this.resumoUrl}/buscaPorMes`,
+      { search: params })
+      .toPromise()
+      .then(response => {
         const lancamentos = response.json() as Lancamento[];
         return lancamentos;
       });
@@ -57,5 +82,10 @@ export class ResumoDiarioService {
 
 export class Filtro {
   dataLancamento: Date;
+  constructor(
+    dataLancamento?: Date,
+  ) {
+    this.dataLancamento = dataLancamento;
+  }
 }
 

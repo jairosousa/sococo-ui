@@ -15,13 +15,16 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToolbarModule } from 'primeng/toolbar';
 import { CardModule } from 'primeng/card';
 
+import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
 import { ResumoDiarioRoutingModule } from './resumo-routing.module';
-import { ResumoDiarioCadastroComponent } from './resumo-diario-cadastro/resumo-diario-cadastro.component';
-import { ResumoDiarioPesquisaComponent } from './resumo-diario-pesquisa/resumo-diario-pesquisa.component';
-import { ResumoDiarioService } from './resumo-diario.service';
-import { CoreModule } from '../core/core.module';
+
 import { ResumoDiarioComponent } from './resumo-diario/resumo-diario.component';
+import { ResumoMensalComponent } from './resumo-mensal/resumo-mensal.component';
+import { ResumoDiarioPesquisaComponent } from './resumo-diario-pesquisa/resumo-diario-pesquisa.component';
+import { ResumoDiarioCadastroComponent } from './resumo-diario-cadastro/resumo-diario-cadastro.component';
+
+import { ResumoDiarioService } from './resumo-diario.service';
 
 @NgModule({
   imports: [
@@ -49,7 +52,9 @@ import { ResumoDiarioComponent } from './resumo-diario/resumo-diario.component';
   ],
   declarations: [
     ResumoDiarioCadastroComponent, 
-    ResumoDiarioPesquisaComponent, ResumoDiarioComponent
+    ResumoDiarioPesquisaComponent, 
+    ResumoDiarioComponent, 
+    ResumoMensalComponent
   ],
   exports:[],
   providers: [ResumoDiarioService]

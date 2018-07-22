@@ -11,8 +11,8 @@ export class NavbarComponent implements OnInit {
   exibindoMenu = false;
 
   items = [
-            {label: 'Diario', icon: 'fa-link', routerLink: ['/resumo']},
-            {label: 'mensal', icon: 'fa-paint-brush', routerLink: ['/cadastro'], routerLinkActive:"ativo"}
+            {label: 'Diario', icon: 'fa-link', routerLink: ['/resumo-diario']},
+    { label: 'mensal', icon: 'fa-paint-brush', routerLink: ['/resumo-mensal'], routerLinkActive:"ativo"}
         ];
 
   items_cad = [

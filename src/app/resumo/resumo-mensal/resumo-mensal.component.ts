@@ -2,15 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ResumoDiarioService, Filtro } from '../resumo-diario.service';
 import { Sococo, Acqua, Amafibra, Lancamento } from '../model';
-import { THROW_IF_NOT_FOUND } from '../../../../node_modules/@angular/core/src/di/injector';
-import { lang } from '../../../../node_modules/moment';
 
 @Component({
-  selector: 'app-resumo-diario',
-  templateUrl: './resumo-diario.component.html',
-  styleUrls: ['./resumo-diario.component.css']
+  selector: 'app-resumo-mensal',
+  templateUrl: './resumo-mensal.component.html',
+  styleUrls: ['./resumo-mensal.component.css']
 })
-export class ResumoDiarioComponent implements OnInit {
+export class ResumoMensalComponent implements OnInit {
 
   loader: boolean;
 
@@ -35,7 +33,7 @@ export class ResumoDiarioComponent implements OnInit {
   }
 
   private carregarData() {
-    this.filtro.dataLancamento = new Date("2018-07-19");
+    this.filtro = new Filtro(new Date("2018-07-19"));
     this.pesquisar();
   }
 
@@ -44,14 +42,13 @@ export class ResumoDiarioComponent implements OnInit {
 
     this.lancamentos = [];
 
+    console.log(this.filtro);
+
     this.limparListas();
 
-    this.resumoService.pesquisar(this.filtro)
+    this.resumoService.pesquisarMes(this.filtro)
       .then(lancamentos => {
-
-        
         console.log(lancamentos);
-        
 
         lancamentos.forEach(lancamento => {
           this.sococo = new Sococo(
@@ -75,9 +72,6 @@ export class ResumoDiarioComponent implements OnInit {
           this.amafibra = new Amafibra(
             lancamento.numeroDeFardos
           )
-
-          let tipo  =  typeof(lancamento.procentagemCocoGerminado);
-          console.log(tipo);
           
         })
 
