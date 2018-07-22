@@ -18,8 +18,20 @@ export class AppComponent implements OnInit {
     this.title.setTitle('SCC-Indicadores');
   }
 
-  exibindoNavbar() {
-    return this.router.url !== '/login';
+  // exibindoNavbar() {
+  //   return this.router.url !== '/login';
+  // }
+
+  mobileMenuActive: boolean;
+
+  onMobileMenuButton(event) {
+    this.mobileMenuActive = !this.mobileMenuActive;
+    event.preventDefault();
+  }
+
+  hideMobileMenu(event) {
+    this.mobileMenuActive = false;
+    event.preventDefault();
   }
 
 }
