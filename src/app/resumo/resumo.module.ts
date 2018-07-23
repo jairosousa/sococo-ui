@@ -14,6 +14,7 @@ import { PanelModule } from 'primeng/panel';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ToolbarModule } from 'primeng/toolbar';
 import { CardModule } from 'primeng/card';
+import { DataTableModule } from 'primeng/datatable';
 
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
@@ -45,6 +46,7 @@ import { ResumoDiarioService } from './resumo-diario.service';
     ToolbarModule,
     CardModule,
     TooltipModule,
+    DataTableModule,
 
     SharedModule,
     CoreModule,

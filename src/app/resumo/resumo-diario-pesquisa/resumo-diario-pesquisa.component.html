@@ -10,7 +10,7 @@
 
   <div class="ui-toolbar-group-right">
     <h4>
-      <p-calendar [touchUI]="true" [showIcon]="true" [locale]="pt" dateFormat="dd/mm/yy" [inputStyle]="{ width: '200px'}" name="dataLancamento"
+      <p-calendar [showIcon]="true" [locale]="pt" dateFormat="dd/mm/yy" [inputStyle]="{ width: '200px'}" name="dataLancamento"
         [(ngModel)]="filtro.dataLancamento" (onSelect)="pesquisar()">
       </p-calendar>
       <span style="margin-left:35px" pTooltip="Pesquisar"></span>

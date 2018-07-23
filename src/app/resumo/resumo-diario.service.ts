@@ -85,7 +85,7 @@ export class Filtro {
   constructor(
     dataLancamento?: Date,
   ) {
-    this.dataLancamento = dataLancamento;
+    this.dataLancamento = new Date("2018-07-19");
   }
 }
 

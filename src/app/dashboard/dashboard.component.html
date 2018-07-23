@@ -1,3 +1,5 @@
-<p>
-  dashboard works!
-</p>
+<p-tabMenu [model]="items" styleClass="tab-dsh"></p-tabMenu>
+<br />
+<br />
+<br />
+<router-outlet (alterarData)="alterouData($event)"></router-outlet>

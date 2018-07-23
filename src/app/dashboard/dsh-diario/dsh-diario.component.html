@@ -1,0 +1,27 @@
+<p-toolbar>
+  <div class="ui-toolbar-group-left">
+    <h2>Lancamentos</h2>
+  </div>
+
+  <div class="ui-toolbar-group-right">
+    <h4>
+      <p-calendar [showIcon]="true" [locale]="pt" dateFormat="mm/yy" [inputStyle]="{ width: '250px'}" name="dataLancamento" view="month"
+        [yearNavigator]="true" yearRange="2000:2130" [(ngModel)]="filtro.dataLancamento" (onSelect)="pesquisar($event)"></p-calendar>
+      <span style="margin-left:35px" pTooltip="Pesquisar"></span>
+
+      <button pButton type="button" icon="pi pi-refresh" (click)="limpar()" styleClass="my-calendar" class="ui-button-secondary"
+        pTooltip="Limpar" tooltipPosition="top">
+      </button>
+
+    </h4>
+  </div>
+</p-toolbar>
+
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-12 ui-lg-6">
+    <p-chart type="bar" [data]="cocos"></p-chart>
+  </div>
+  <div class="ui-g-12 ui-md-12 ui-lg-6">
+    <app-cri-flococo></app-cri-flococo>
+  </div>
+</div>

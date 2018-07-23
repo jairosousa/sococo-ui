@@ -35,7 +35,14 @@ body {
             position: relative;
 
             .topbar-logo {
-                height: 40px;
+                height: 0px;
+                vertical-align: middle;
+            }
+
+            .topbar-text {
+                color: #fff;
+                font-size: 24px;
+                margin: 5px 20px;
                 vertical-align: middle;
             }
     
@@ -196,6 +203,14 @@ body {
                 .topbar-logo {
                     height: 28px;
                     margin-top: 6px;
+                }
+
+                .topbar-text {
+                    color: #fff;
+                    font-size: 24px;
+                    margin: 5px 0px;
+                    vertical-align: middle;
+                    display: inline-block;
                 }
 
                 .menu-btn {

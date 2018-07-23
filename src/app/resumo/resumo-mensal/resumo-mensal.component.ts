@@ -28,6 +28,7 @@ export class ResumoMensalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.title.setTitle('Resumo Mensal');
     this.carregarCalendar();
     this.carregarData();
   }
